@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.musicGrpc";
+option java_outer_classname = "MusicGrpcUser";
+option objc_class_prefix = "RTG";
+
+
+package musicGrpc;
+
+service User {
+    //POST
+    rpc AddUser (UserData) returns (UserData){}
+    
+    //PUT
+    rpc UpdateUser (UserID) returns (UserData){}
+
+    //GET
+    rpc GetUser (UserID) returns (UserData){}
+
+    //DELETE
+    rpc RemoveUser (UserID) returns (UserData){}
+}
+
+message UserData{
+    int64 id = 1; //primarykey of user
+    string name = 2; //name of the user
+    string email = 3; //email addr of the user
+}
+
+message UserID{
+    int64 id = 1;
+}
