@@ -6,15 +6,6 @@ import song_pb2
 
 def read_song_database():
     feature_list = []
-    # with open("song_db.json", 'r') as song_db_file:
-    #     for item in json.load(song_db_file)["data"]:
-    #         feature = song_pb2.SongData(
-    #             id=int(item["id"]),
-    #             title=str(item["title"]),
-    #             artist=str(item["artist"]),
-    #             album=str(item["album"])
-    #         )
-    #         feature_list.append(feature)
     with open("song_db.json", 'r') as song_db_file:
         for item in json.load(song_db_file)["data"]:
             feature = {
@@ -53,9 +44,9 @@ def add_song_database(name, artist, album):
 def update_song_database(song):
     data = read_song_database()
     isPresent = False
-    print("data fetched")
+    # print("data fetched")
     index = 0
-    print("Len: ", len(data))
+    # print("Len: ", len(data))
     for s in data:
         print("ID:      ", s["id"])
         if s["id"] is song.id:
@@ -93,7 +84,7 @@ def delete_song_database(song):
 
     if isPresent:
         with open("song_db.json", 'w') as song_db_file:
-            json.dump(new_data, song_db_file)
+            json.dump({"data":new_data}, song_db_file)
         return 1
     else:
         return 0

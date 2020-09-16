@@ -1,20 +1,28 @@
-[
-    {
-        "id": 1,
-        "title": "new",
-        "artist": "new",
-        "album": "new"
-    },
-    {
-        "id": 2,
-        "title": "asda",
-        "artist": "dsas",
-        "album": "asd"
-    },
-    {
-        "id": 3,
-        "title": "nnn",
-        "artist": "nnn",
-        "album": "nnn"
-    }
-]
+{
+    "data": [
+        {
+            "id": 2,
+            "title": "faded",
+            "artist": "Alan Walker",
+            "album": "instrumental"
+        },
+        {
+            "id": 3,
+            "title": "nnn",
+            "artist": "nnn",
+            "album": "nnn"
+        },
+        {
+            "id": 4,
+            "title": "some song",
+            "artist": "some artist",
+            "album": "some album"
+        },
+        {
+            "id": 4,
+            "title": "goodbye",
+            "artist": "Apparat",
+            "album": "Fav"
+        }
+    ]
+}

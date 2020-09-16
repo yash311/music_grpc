@@ -25,6 +25,7 @@ class MySongServicer(song_pb2_grpc.SongServicer):
         title = str(request.title)
         artist = str(request.artist)
         album = str(request.album)
+        print("POST request served")
 
         if title is None:
             print("Title is not provided")
@@ -47,7 +48,7 @@ class MySongServicer(song_pb2_grpc.SongServicer):
     def GetSong(self, request, context):
         db = song_resources.read_song_database()
         request = get_song(db, request.id)
-        
+        print("GET request served")
         if request is None:
             return song_pb2.SongData(
                 id = -1,
@@ -66,6 +67,7 @@ class MySongServicer(song_pb2_grpc.SongServicer):
     '''PUT Method Implementation'''
     def UpdateSong(self, request, context):
         res = song_resources.update_song_database(request)
+        print("PUT request served")
         if res is 0:
             return song_pb2.SongData(
                 id = -1,
@@ -85,6 +87,7 @@ class MySongServicer(song_pb2_grpc.SongServicer):
     '''DELETE Method Implementation'''
     def RemoveSong(self, request, context):
         res = song_resources.delete_song_database(request)
+        print("DELETE request served")
         if res == "-1":
             return song_pb2.SongData(
                 id = -1,
