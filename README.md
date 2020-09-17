@@ -1,4 +1,5 @@
 # music_grpc
+A REST API (CURD) implementation using gRPC in python.
 
 ## Dependencies
 * pip install grpc
