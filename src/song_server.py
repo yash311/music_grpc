@@ -34,11 +34,10 @@ class MySongServicer(song_pb2_grpc.SongServicer):
         if album is None:
             print("Album is not provided")
        
-        song_resources.add_song_database(title, artist, album)
+        new_song = song_resources.add_song_database(title, artist, album)
 
-        print("Data added successfully")
         return song_pb2.SongData(
-                id = request.id,
+                id = new_song["id"],
                 title = request.title,
                 artist = request.artist,
                 album = request.album

@@ -39,6 +39,8 @@ def add_song_database(name, artist, album):
     new_data["data"] = data
     with open("song_db.json", 'w') as song_db_file:
         json.dump(new_data, song_db_file)
+        song_db_file.close()
+    return new_song
 
 
 def update_song_database(song):

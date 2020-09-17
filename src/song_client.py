@@ -38,7 +38,9 @@ def handlePost(stub):
     song = stub.AddSong(song_pb2.SongData(id=1, title=sname, artist=sartist, album=salbum))
 
     if song:
-        print("Song Added Succesfully")
+        print("\nSong Added Succesfully")
+        print(song)
+
     
 
 
