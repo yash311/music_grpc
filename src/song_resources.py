@@ -48,8 +48,7 @@ def update_song_database(song):
     index = 0
     # print("Len: ", len(data))
     for s in data:
-        print("ID:      ", s["id"])
-        if s["id"] is song.id:
+        if s["id"] == song.id:
             isPresent = True
             break
         index+=1
