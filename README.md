@@ -2,7 +2,7 @@
 A REST API (CURD) implementation using gRPC in python.
 
 ## Dependencies
-* pip install grpc
+* pip install grpcio
 * pip install grpc-tools
 
 ## Running the code
